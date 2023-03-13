@@ -1,6 +1,9 @@
 import React from "react";
 import "./HomePage.scss";
 import { Options } from "./Options";
+import { Strenght } from "./Strenght";
+import { Password } from "./Password";
+
 export const HomePage: React.FC = () => {
   return (
     <>
@@ -10,8 +13,8 @@ export const HomePage: React.FC = () => {
             <h2>Password Generator</h2>
           </div>
           <Options />
-          <div className="generator-box-strenght"></div>
-          <div className="generator-box-copyboard"></div>
+          <Strenght />
+          <Password />
         </div>
       </section>
     </>

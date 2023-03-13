@@ -1,0 +1,40 @@
+.generator-box-strenght {
+  background-color: var(--grey);
+  border-radius: 12px;
+  padding: 12px 16px 16px 16px;
+  border-bottom: 16px;
+  .generator-box-strenght-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    .box-title {
+      h3 {
+        margin: 0;
+        font-size: 16px;
+        color: var(--black);
+      }
+    }
+    .box-info {
+      p {
+        font-size: 14px;
+        color: var(--grey-dark);
+        margin: 0;
+      }
+    }
+  }
+  .generator-box-strenght-progress {
+    display: flex;
+    .progress-box {
+      background-color: #e2e2e2;
+      height: 6px;
+      width: 100%;
+      margin-right: 7px;
+      border-radius: 12px;
+
+      &.active {
+        background-color: var(--red);
+      }
+    }
+  }
+}

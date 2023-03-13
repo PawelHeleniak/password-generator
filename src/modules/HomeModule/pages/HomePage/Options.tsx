@@ -6,8 +6,8 @@ export const Options: React.FC = () => {
     <div className="generator-box-options">
       <div className="generator-box-options-bar">
         <div className="characters">
-          <h2>Character Lengh</h2>
-          <h3>6</h3>
+          <h3>Character Lengh</h3>
+          <h2>6</h2>
         </div>
         <div className="bar">
           <div className="bar-lengh"></div>
