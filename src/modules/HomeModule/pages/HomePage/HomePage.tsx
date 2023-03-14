@@ -3,6 +3,7 @@ import "./HomePage.scss";
 import { Options } from "./Options";
 import { Strenght } from "./Strenght";
 import { Password } from "./Password";
+import { Button } from "./Button";
 
 export const HomePage: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ export const HomePage: React.FC = () => {
           <Options />
           <Strenght />
           <Password />
+          <Button />
         </div>
       </section>
     </>
