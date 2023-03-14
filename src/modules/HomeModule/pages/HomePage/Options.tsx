@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Options.scss";
 
-export const Options: React.FC = () => {
+export const Options: React.FC = (props) => {
+  const [range, setRange] = useState("1");
+  const minRange = 4;
+  const maxRange = 16;
+  const handleChange = (value: string) => {
+    setRange(value);
+    props.onClick(value);
+  };
   return (
     <div className="generator-box-options">
       <div className="generator-box-options-bar">
         <div className="characters">
           <h3>Character Lengh</h3>
-          <h2>6</h2>
+          <h2>{range}</h2>
         </div>
         <div className="bar">
-          <div className="bar-lengh"></div>
-          <div className="bar-circle">
-            <div className="bar-circle-inside"></div>
-          </div>
+          <input
+            type="range"
+            min={minRange}
+            max={maxRange}
+            value={range}
+            onChange={(e) => handleChange(e.target.value)}
+          />
         </div>
       </div>
       <div className="generator-box-options-checkbox">

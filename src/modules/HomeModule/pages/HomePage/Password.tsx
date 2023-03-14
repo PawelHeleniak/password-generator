@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Password.scss";
 
-export const Password: React.FC = () => {
+export const Password: React.FC = ({ option }) => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const Password: React.FC = () => {
     const numbers = "1234567890";
     const symbols = "!@#$%^&*?";
     const result = [];
-    const lenght = 10;
+    const lenght = option;
 
     const all = uppercase + lowercase + numbers + symbols;
     for (let i = 0; i < lenght; i++) {
