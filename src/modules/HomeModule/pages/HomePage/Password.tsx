@@ -1,27 +1,38 @@
 import React, { useEffect, useState } from "react";
 import "./Password.scss";
 
-export const Password: React.FC = ({ option }) => {
+type PasswordProps = { range: number; check: Array };
+
+export const Password: React.FC<PasswordProps> = ({ range, check }) => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
     if (!value) handlePassword();
   });
+
   const handlePassword = () => {
     const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lowercase = "abcdefghijklmnopqrstuvwxyz";
-    const numbers = "1234567890";
+    const numers = "1234567890";
     const symbols = "!@#$%^&*?";
-    const result = [];
-    const lenght = option;
 
-    const all = uppercase + lowercase + numbers + symbols;
+    let all = "";
+    if (check.uppercase) all += uppercase;
+    if (check.lowercase) all += lowercase;
+    if (check.numers) all += numers;
+    if (check.symbols) all += symbols;
+    console.log(all);
+    generatePassword(all);
+  };
+  const generatePassword = (all: string) => {
+    const result = [];
+    const lenght = range;
+
     for (let i = 0; i < lenght; i++) {
       result.push(all.charAt(Math.floor(Math.random() * all.length)));
     }
     const join = result.join("");
     const convertedArray = join.toString();
-
     setValue(convertedArray);
   };
 
