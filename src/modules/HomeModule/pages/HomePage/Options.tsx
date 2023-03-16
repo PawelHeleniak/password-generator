@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Options.scss";
 
-type OptionsProps = { onClick: (data: number, length) => void };
+type OptionsProps = { onClick: (length: number, options) => void };
 interface CheckState {
   uppercase: boolean;
   lowercase: boolean;
@@ -28,7 +28,17 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
   useEffect(() => {
     onClick(range, check);
   });
+  const handleCheck = (e: any) => {
+    const checked = e.target.checked;
+    const name = e.target.name;
 
+    const objCheck = Object.entries(check);
+    const returnValue = objCheck.filter((element, key) => {
+      return element[1] === true;
+    });
+    //FIX
+    setCheck({ ...check, [name]: checked });
+  };
   return (
     <div className="generator-box-options">
       <div className="generator-box-options-bar">
@@ -53,9 +63,7 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
             type="checkbox"
             name="uppercase"
             checked={check.uppercase}
-            onChange={(e) =>
-              setCheck({ ...check, uppercase: e.target.checked })
-            }
+            onChange={(e) => handleCheck(e)}
           />
         </div>
         <div className="input-container_checkbox">
@@ -64,9 +72,7 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
             type="checkbox"
             name="lowercase"
             checked={check.lowercase}
-            onChange={(e) =>
-              setCheck({ ...check, lowercase: e.target.checked })
-            }
+            onChange={(e) => handleCheck(e)}
           />
         </div>
         <div className="input-container_checkbox">
@@ -75,7 +81,7 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
             type="checkbox"
             name="numers"
             checked={check.numers}
-            onChange={(e) => setCheck({ ...check, numers: e.target.checked })}
+            onChange={(e) => handleCheck(e)}
           />
         </div>
         <div className="input-container_checkbox">
@@ -84,7 +90,7 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
             type="checkbox"
             name="symbols"
             checked={check.symbols}
-            onChange={(e) => setCheck({ ...check, symbols: e.target.checked })}
+            onChange={(e) => handleCheck(e)}
           />
         </div>
       </div>

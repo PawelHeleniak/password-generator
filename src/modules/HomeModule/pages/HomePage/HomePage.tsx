@@ -22,7 +22,9 @@ export const HomePage: React.FC = () => {
             <h2>Password Generator</h2>
           </div>
           <Options
-            onClick={(data: number, length: Array) => getOption(data, length)}
+            onClick={(length: number, options: Array) =>
+              getOption(length, options)
+            }
           />
           <Strenght />
           <Password range={range} check={check} />

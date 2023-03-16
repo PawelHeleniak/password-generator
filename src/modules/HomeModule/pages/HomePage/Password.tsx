@@ -21,7 +21,6 @@ export const Password: React.FC<PasswordProps> = ({ range, check }) => {
     if (check.lowercase) all += lowercase;
     if (check.numers) all += numers;
     if (check.symbols) all += symbols;
-    console.log(all);
     generatePassword(all);
   };
   const generatePassword = (all: string) => {
