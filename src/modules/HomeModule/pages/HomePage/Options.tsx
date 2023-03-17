@@ -39,8 +39,6 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
     //FIX
     setCheck({ ...check, [name]: checked });
   };
-  // const to = maxRange - minRange;
-  // const to2 = range - minRange;
   return (
     <div className="generator-box-options">
       <div className="generator-box-options-bar">

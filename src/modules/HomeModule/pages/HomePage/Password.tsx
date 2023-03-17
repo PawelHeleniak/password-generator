@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Password.scss";
 import refreshIcon from "../../../../assets/images/icon/refresh.png";
-type PasswordProps = { range: number; check: Array };
+type PasswordProps = {
+  range: number;
+  check: Array;
+  onClick: (password: string) => void;
+};
 
-export const Password: React.FC<PasswordProps> = ({ range, check }) => {
+export const Password: React.FC<PasswordProps> = ({
+  range,
+  check,
+  onClick,
+}) => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
@@ -32,6 +40,8 @@ export const Password: React.FC<PasswordProps> = ({ range, check }) => {
     }
     const join = result.join("");
     const convertedArray = join.toString();
+
+    onClick(convertedArray);
     setValue(convertedArray);
   };
 

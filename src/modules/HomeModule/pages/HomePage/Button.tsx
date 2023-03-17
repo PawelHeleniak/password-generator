@@ -1,11 +1,19 @@
 import React from "react";
 import "./Button.scss";
+type ButtonProps = {
+  password: string;
+};
+export const Button: React.FC<ButtonProps> = ({ password }) => {
+  const copyPassword = () => {
+    navigator.clipboard.writeText(password);
+  };
 
-export const Button: React.FC = () => {
   return (
     <div className="generator-box-button">
       <div className="btn-container">
-        <button type="button">Copy Password</button>
+        <button type="button" onClick={copyPassword}>
+          Copy Password
+        </button>
       </div>
     </div>
   );
