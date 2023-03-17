@@ -39,6 +39,8 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
     //FIX
     setCheck({ ...check, [name]: checked });
   };
+  // const to = maxRange - minRange;
+  // const to2 = range - minRange;
   return (
     <div className="generator-box-options">
       <div className="generator-box-options-bar">
@@ -46,6 +48,7 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
           <h3>Character Lengh</h3>
           <h2>{range}</h2>
         </div>
+
         <div className="bar">
           <input
             type="range"
@@ -54,6 +57,12 @@ export const Options: React.FC<OptionsProps> = ({ onClick }) => {
             value={range}
             onChange={(e) => handleChange(+e.target.value)}
           />
+          <div
+            className="bar-progress"
+            style={{
+              width: `${((range - minRange) / (maxRange - minRange)) * 100}%`,
+            }}
+          ></div>
         </div>
       </div>
       <div className="generator-box-options-checkbox">

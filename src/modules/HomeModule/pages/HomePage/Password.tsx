@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Password.scss";
-
+import refreshIcon from "../../../../assets/images/icon/refresh.png";
 type PasswordProps = { range: number; check: Array };
 
 export const Password: React.FC<PasswordProps> = ({ range, check }) => {
@@ -39,10 +39,10 @@ export const Password: React.FC<PasswordProps> = ({ range, check }) => {
     <div className="generator-box-copyboard">
       <div className="input-container">
         <input type="text" value={value} />
+        <button type="button" onClick={() => handlePassword()}>
+          <img src={refreshIcon} alt="refresh password" />
+        </button>
       </div>
-      <button type="button" onClick={() => handlePassword()}>
-        Hi
-      </button>
     </div>
   );
 };

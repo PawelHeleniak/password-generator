@@ -19,7 +19,16 @@
     }
     .bar {
       width: 100%;
-
+      position: relative;
+      .bar-progress {
+        position: absolute;
+        height: 4px;
+        top: 50%;
+        transform: translateY(1px);
+        left: 0;
+        background-color: var(--blue);
+        border-radius: 200px;
+      }
       // test
       input[type="range"] {
         position: relative;
@@ -35,16 +44,18 @@
         appearance: none;
       }
       input[type="range"]::-webkit-slider-thumb {
+        position: relative;
         background-color: var(--blue);
         box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1),
           0px 7px 7px rgba(0, 0, 0, 0.04);
         width: 10px;
         height: 10px;
         padding: 5px;
-        margin: -7px 0 0 0;
+        margin: -8px 0 0 0;
         border-radius: 200px;
         border: 5px solid var(--white);
         appearance: none;
+        z-index: 10;
       }
     }
   }
