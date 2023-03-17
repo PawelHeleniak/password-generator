@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Options.scss";
 
-type OptionsProps = { onClick: (length: number, options) => void };
+type OptionsProps = { onClick: (length: number, options: any) => void };
 interface CheckState {
   uppercase: boolean;
   lowercase: boolean;

@@ -11,7 +11,7 @@ export const HomePage: React.FC = () => {
 
   const [password, setPassword] = useState("");
 
-  const getOption = (length: number, options: Array) => {
+  const getOption = (length: number, options: any) => {
     if (length != range) setRange(length);
     if (options != check) setCheck(options);
   };
@@ -27,9 +27,7 @@ export const HomePage: React.FC = () => {
             <h2>Password Generator</h2>
           </div>
           <Options
-            onClick={(length: number, options: Array) =>
-              getOption(length, options)
-            }
+            onClick={(length: number, options) => getOption(length, options)}
           />
           <Strenght />
           <Password

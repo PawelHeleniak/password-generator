@@ -3,7 +3,7 @@ import "./Password.scss";
 import refreshIcon from "../../../../assets/images/icon/refresh.png";
 type PasswordProps = {
   range: number;
-  check: Array;
+  check: any;
   onClick: (password: string) => void;
 };
 
